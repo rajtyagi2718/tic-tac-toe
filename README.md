@@ -1,5 +1,7 @@
 # Self-Play Reinforcement Learning vs 
-# Dynamic Programming Agents in the game of Tic-Tac-Toe.
+# Dynamic Programming Agents 
+# in the game of 
+# Tic-Tac-Toe.
 
 ## Learning Curves
 ![alt text](https://github.com/rajtyagi2718/tic-tac-toe/blob/master/data/plots.svg)
@@ -16,6 +18,6 @@ The second approach is Reinforcement Learning (RL). These agents learn iterative
 
 Monte Carlo RL updates toward the actual reward. Temporal DIfference (TD 0) uses estimated rewards stored in the table. Q Search is similar to Q Learning by updating toward the best estimated reward. This is the result of a minimax search up to a certain depth.  TreeStrap is similar to Q Search, except the estimated reward is backed up to all interior nodes of the Minimax tree search.
 
-The Minimax agent is a perfect player. It never loses. Each RL agent converges to the optimal policy eventually. A sample of the first 750 games is shown. Note that MonteCarlo values have little variance since there are no intermediate rewards. TD Lambda relies of estimated rewards, which compounds variance with each action. Q Search is off-policy and has the most variance. Estimated returns are a result a multi-ply search. The variance trades off with a steady learning rate.
+The Minimax agent is a perfect player. It never loses. Each RL agent converges to the optimal policy eventually. A sample of the first 750 games is shown. Note that Monte Carlo values have little variance since there are no intermediate rewards. TD Lambda relies of estimated rewards, which compounds variance with each action. Q Search is off-policy and has the most variance. Estimated returns are a result a multi-ply search. The variance trades off with a steady learning rate.
 
-TreeStrap has minimal variance and outstanding learning rate. It converges weakly within 200 games. When experimenting with random values initalization, it often converges within 100 games. Where as Q Search only updates the root of each minimax search tree toward the result of the search, TreeStrap adjusts all interior nodes as well, thus fully utilizing each search. Self-play RL shows promise for larger games as well. With feature extraction, function approximation, and a deeper Alpha Beta search, TreeStrap can be extended to more complex games.
+Tree Strap has minimal variance and outstanding learning rate. It converges weakly within 200 games. When experimenting with random values initalization, it often converges within 100 games. Where as Q Search only updates the root of each minimax search tree toward the result of the search, Tree Strap adjusts all interior nodes as well, thus fully utilizing each search. Self-play RL shows promise for larger games as well. With feature extraction, function approximation, and a deeper Alpha Beta search, TreeStrap can be extended to more complex games.
