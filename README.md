@@ -26,8 +26,11 @@ RL agents learn iteratively through experience. After each game, the agent is gi
 
 MC updates toward the actual reward. TD uses estimated rewards stored in the table. Q Search is similar to Q Learning by updating toward the best estimated reward, however the estimate is the result of a minimax search up to a certain depth. TS is similar to Q, except the estimated reward is backed up to all interior nodes of the minimax tree search.
 
-## Variance
+## Variance in Values
 Each RL agent converges to the optimal policy within 2000 games, and weakly within 750 games. Note that MC values have little variance since there are no intermediate rewards. TD relies of estimated rewards, which compounds variance with each action. Q is off-policy and has the most variance. Estimated returns are a result a multi-ply search. The variance trades off with a steady learning rate.
 
-## Tree Strap
-Tree Strap has minimal variance and outstanding learning rate. It converges weakly within 200 games. When experimenting with random values initalization, it often converges within 100 games. Where as Q Search only updates the root of each minimax search tree toward the result of the search, Tree Strap adjusts all interior nodes as well, thus fully utilizing each search. Self-play RL shows promise for larger games as well. With feature extraction, function approximation, and a deeper Alpha Beta search, TreeStrap can be extended to more complex games.
+## Tree Strap Performance
+TS has minimal variance and outstanding learning rate. It converges weakly within 200 games. When experimenting with random values initalization, it often converges within 100 games. Where as Q only updates the root of each minimax search tree toward the result of the search, TS adjusts all interior nodes as well, thus fully utilizing each search. 
+
+## Tree Strap Generalizability
+Self-play RL shows promise for larger games as well. With feature extraction, function approximation, and Alpha Beta search with greater depth, TS can be extended to more complex games.
