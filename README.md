@@ -1,14 +1,12 @@
 # Self-Play RL vs DP Agents in Tic-Tac-Toe
-
-## Learning Curves
 ![alt text](https://github.com/rajtyagi2718/tic-tac-toe/blob/master/data/plots.svg)
 
-## Overview
+## Learning Curves
 Self-Play Reinforcement Learning (RL) has shown remarkable results in a variety of games. For smaller games, Dynamic Programming (DP) and Minimax tree search is the most efficient method for creating perfect agents. However, for larger games, this relies on expert domain knowledge and hard-coded heuristics. Self-play RL has the potential of generalizing a single tabula rasa learning algorithm across all types of games.
 
 We experiment with self-play RL in the simple game of Tic-Tac-Toe. After developing an efficient representation of the game, we implement each type of AI agent.  For DP, we implement 3 types: Uniform, Discount, Minimax. We also have a baseline random agent. These fixed policies are played against 4 self-play RL agents: Monte Carlo (MC), Temporal Difference Lambda (TD), Q Search (Q), and Tree Strap (TS).
 
-During policy improvement over 1000 games, we measure the current performance of the RL agents by playing the DP agents 100 times. The learning curves for each RL agent is shown below. Note that a perfect player can only guarantee a draw from the start. So a win share of at least 50 out of 100 demonstrates convergence to an optimal policy.
+During policy improvement over 1000 games, we measure the current performance of the RL agents by playing the DP agents 100 times. The learning curves for each RL agent is shown above. Note that a perfect player can only guarantee a draw from the start. So a win share of at least 50 out of 100 demonstrates convergence to an optimal policy.
 
 ## How to Play
 Tic-Tac-Toe or Noughts & Crosses is a 2-player deterministic game played on a 3x3 board. On each turn a player chooses an empty cell. A player wins if they select three in a row (or column, diagonal). The game ends in a draw if all cells are filled without a winner.
