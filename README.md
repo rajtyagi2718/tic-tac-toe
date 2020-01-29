@@ -3,7 +3,7 @@ Self-Play Reinforcement Learning (RL) has shown remarkable results in a variety 
 
 We experiment with self-play RL in the simple game of Tic-Tac-Toe. After developing an efficient representation of the game, we implement each type of AI agent.  For DP, we implement 3 types: Uniform, Discount, Minimax. We also have a baseline random agent. These fixed policies are played against 4 self-play RL agents: Monte Carlo (MC), Temporal Difference Lambda (TD), Q Search (Q), and Tree Strap (TS).
 
-During policy improvement over 1000 games, we measure the current performance of the RL agents by playing the DP agents 100 times. The learning curves for each RL agent is shown below. 
+During policy improvement over 1000 games, we measure the current performance of the RL agents by playing the DP agents 100 times. The learning curves for each RL agent is shown below. Note that a perfect player can only guarantee a draw from the start. So a win share of at least 50 out of 100 demonstrates convergence to an optimal policy.
 
 ## Learning Curves
 ![alt text](https://github.com/rajtyagi2718/tic-tac-toe/blob/master/data/plots.svg)
