@@ -14,7 +14,7 @@ Tic-Tac-Toe or Noughts & Crosses is a 2-player deterministic game played on a 3x
 ## MDP
 The game can be viewed as a Markov Decision Process (MDP) where each board is a state and each player can take an action to advance to an afterstate. As a graph, afterstates are children. The root node is the empty board, and the leaves are the terminal boards (win, lose, or draw).  An upper bound for the number of states is 3^9 = 19,683. The actual number of states is 5478. Accounting for symmetry and transpositions, we can narrow it down 765 states.
 
-To develop different policies, we create a table mapping each state to a value. Terminal states are valued at (1, -1, 0) for (agent1 win, agent2 win, draw). During game play, the agent will choose an action with the best afterstate. So agent1 finds the maximal child value, agent2 the minimal.
+To develop different policies, we create a table mapping each state to a value. Terminal states are valued at (1, -1, 0) for (agent1 win, agent2 win, draw). During game play, the agent will choose an action with the best afterstate. So agent1 finds the maximal child value and agent2 the minimal.
 
 ## DP
 DP recursively generates the complete game tree, then backs up the values from the leaves to the root. The Uniform agent assumes actions are chosen randomly. So parent values equal the average of its children. The Discount agent is similar, except values decay for each ply of the backup. The Minimax agent assumes the opponent plays optimally as well. Therefore, each parent value will equal the optimal child value.
@@ -33,4 +33,4 @@ Each RL agent converges to the optimal policy within 2000 games, and weakly with
 TS has minimal variance and outstanding learning rate. It converges weakly within 200 games. When experimenting with random values initalization, it often converges within 100 games. Where as Q only updates the root of each minimax search tree toward the result of the search, TS adjusts all interior nodes as well, thus fully utilizing each search. 
 
 ## Tree Strap Generalizability
-Self-play RL shows promise for larger games as well. With feature extraction, function approximation, and Alpha Beta search with greater depth, TS can be extended to more complex games.
+Self-play RL shows promise for larger games. With feature extraction, function approximation, and Alpha Beta search of greater depth, TS can be extended to more complex games.
